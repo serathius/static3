@@ -187,7 +187,7 @@ class Cling(object):
                 return self._body(full_path, environ, file_like)
 
             else:
-                return ['']
+                return [_encode("", sys.getdefaultencoding())]
         except (IOError, OSError) as e:
             print(e)
             return self.not_found(environ, start_response)
